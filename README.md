@@ -1,7 +1,7 @@
-validator.dart
+validators
 =============
 
-[![Build Status](https://drone.io/github.com/karan/validator.dart/status.png)](https://drone.io/github.com/karan/validator.dart/latest)
+[![Build Status](https://travis-ci.org/dart-league/validators.svg?branch=master)](https://travis-ci.org/dart-league/validators)
 
 String validation and sanitization for Dart.
 
@@ -9,30 +9,18 @@ Port of [chriso's library](https://github.com/chriso/validator.js).
 
 ## Usage
 
-#### Documentation
-
-Complete documentation of the package is available at http://www.dartdocs.org/documentation/validator/0.0.7/index.html#validator/validator
-
-For a list of methods, refer to the sections below.
-
-#### 1. Depend on it
-
-Add this to your package's `pubspec.yaml` file:
+1\. Add dependency to your package's `pubspec.yaml` file:
 
     dependencies:
       validator: ">=0.0.4 <0.1.0"
 
-#### 2. Install it
-
-You can install packages from the command line:
+2\. Run from the command line:
 
     $ pub get
 
 Alternatively, your editor might support pub. Check the docs for your editor to learn more.
 
-#### 3. Import it
-
-Now in your Dart code, you can use:
+3\. Import in your Dart code:
 
     import 'package:validator/validator.dart';
 
@@ -90,10 +78,3 @@ Now in your Dart code, you can use:
 - **whitelist(String input, chars)** - remove characters that do not appear in the whitelist. The characters are used in a RegExp and so you will need to escape some chars, e.g. whitelist(String input, '\\[\\]').
 - **blacklist(String input, chars)** - remove characters that appear in the blacklist. The characters are used in a RegExp and so you will need to escape some chars, e.g. blacklist(String input, '\\[\\]').
 - **normalizeEmail(String email [, options])** - canonicalize an email address. `options` is an object which defaults to `{ lowercase: true }`. With `lowercase` set to `true`, the local part of the email address is lowercased for all domains; the hostname is always lowercased and the local part of the email address is always lowercased for hosts that are known to be case-insensitive (currently only GMail). Normalization follows special rules for known providers: currently, GMail addresses have dots removed in the local part and are stripped of tags (e.g. `some.one+tag@gmail.com` becomes `someone@gmail.com`) and all `@googlemail.com` addresses are normalized to `@gmail.com`.
-
-## Tests
-
-To test the package, run:
-
-    $ ./tool/run_tests.sh
-

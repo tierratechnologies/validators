@@ -81,7 +81,7 @@ bool isURL(String str, [Map options]) {
 
   options = _merge(options, default_url_options);
 
-  var protocol, user, pass, auth, host, hostname, port, port_str, path, query,
+  var protocol, user, auth, host, hostname, port, port_str, path, query,
       hash, split;
 
   // check protocol
@@ -130,7 +130,6 @@ bool isURL(String str, [Map options]) {
       if (!new RegExp(r'^\S+$').hasMatch(user)) {
         return false;
       }
-      pass = auth.join(':');
       if (!new RegExp(r'^\S*$').hasMatch(user)) {
         return false;
       }
@@ -481,7 +480,7 @@ bool isISBN(String str, [version]) {
 /// check if the string is valid JSON
 bool isJSON(str) {
   try {
-    JSON.decode(str);
+    jsonDecode(str);
   } catch (e) {
     return false;
   }
