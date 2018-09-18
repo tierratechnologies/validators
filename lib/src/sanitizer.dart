@@ -1,7 +1,6 @@
 part of validator;
 
-Map _default_normalize_email_options = { 'lowercase': true };
-
+Map _default_normalize_email_options = {'lowercase': true};
 
 /// convert the input to a string
 String toString(input) {
@@ -11,20 +10,18 @@ String toString(input) {
   return input.toString();
 }
 
-
 /// convert the input to a date, or null if the input is not a date
 DateTime toDate(String str) {
   try {
     return DateTime.parse(str);
-  } catch(e) {
+  } catch (e) {
     return null;
   }
 }
 
-
 /// convert the input to a float, or NAN if the input is not a float
 double toFloat(String str) {
-  try{
+  try {
     return double.parse(str);
   } catch (e) {
     return double.nan;
@@ -36,11 +33,10 @@ double toDouble(String str) {
   return toFloat(str);
 }
 
-
 /// convert the input to an integer, or NAN if the input is not an integer
-num toInt(String str, {int radix:10}) {
+num toInt(String str, {int radix: 10}) {
   try {
-    return int.parse(str, radix:radix);
+    return int.parse(str, radix: radix);
   } catch (e) {
     try {
       return double.parse(str).toInt();
@@ -49,7 +45,6 @@ num toInt(String str, {int radix:10}) {
     }
   }
 }
-
 
 /// convert the input to a boolean.
 ///
@@ -62,13 +57,11 @@ bool toBoolean(String str, [bool strict]) {
   return str != '0' && str != 'false' && str != '';
 }
 
-
 /// trim characters (whitespace by default) from both sides of the input
 String trim(String str, [String chars]) {
   RegExp pattern = (chars != null) ? new RegExp('^[$chars]+|[$chars]+\$') : new RegExp(r'^\s+|\s+$');
   return str.replaceAll(pattern, '');
 }
-
 
 /// trim characters from the left-side of the input
 String ltrim(String str, [String chars]) {
@@ -76,13 +69,11 @@ String ltrim(String str, [String chars]) {
   return str.replaceAll(pattern, '');
 }
 
-
 /// trim characters from the right-side of the input
 String rtrim(String str, [String chars]) {
   var pattern = chars != null ? new RegExp('[$chars]+\$') : new RegExp(r'\s+$');
   return str.replaceAll(pattern, '');
 }
-
 
 /// remove characters that do not appear in the whitelist.
 ///
@@ -92,7 +83,6 @@ String whitelist(String str, String chars) {
   return str.replaceAll(new RegExp('[^' + chars + ']+'), '');
 }
 
-
 /// remove characters that appear in the blacklist.
 ///
 /// The characters are used in a RegExp and so you will need to escape
@@ -100,7 +90,6 @@ String whitelist(String str, String chars) {
 String blacklist(String str, String chars) {
   return str.replaceAll(new RegExp('[' + chars + ']+'), '');
 }
-
 
 /// remove characters with a numerical value < 32 and 127.
 ///
@@ -111,16 +100,15 @@ String stripLow(String str, [bool keep_new_lines]) {
   return blacklist(str, chars);
 }
 
-
 /// replace `<`, `>`, `&`, `'` and `"` with HTML entities
 String escape(String str) {
-  return (str.replaceAll(new RegExp(r'&'), '&amp;')
-             .replaceAll(new RegExp(r'"'), '&quot;')
-             .replaceAll(new RegExp(r"'"), '&#x27;')
-             .replaceAll(new RegExp(r'<'), '&lt;')
-             .replaceAll(new RegExp(r'>'), '&gt;'));
+  return (str
+      .replaceAll(new RegExp(r'&'), '&amp;')
+      .replaceAll(new RegExp(r'"'), '&quot;')
+      .replaceAll(new RegExp(r"'"), '&#x27;')
+      .replaceAll(new RegExp(r'<'), '&lt;')
+      .replaceAll(new RegExp(r'>'), '&gt;'));
 }
-
 
 /// canonicalize an email address.
 ///
@@ -136,19 +124,19 @@ String escape(String str) {
 String normalizeEmail(String email, [Map options]) {
   options = _merge(options, _default_normalize_email_options);
   if (isEmail(email) == false) {
-      return '';
+    return '';
   }
 
   List parts = email.split('@');
   parts[1] = parts[1].toLowerCase();
 
   if (options['lowercase'] == true) {
-      parts[0] = parts[0].toLowerCase();
+    parts[0] = parts[0].toLowerCase();
   }
 
   if (parts[1] == 'gmail.com' || parts[1] == 'googlemail.com') {
     if (options['lowercase'] == false) {
-        parts[0] = parts[0].toLowerCase();
+      parts[0] = parts[0].toLowerCase();
     }
     parts[0] = parts[0].replaceAll('\.', '').split('+')[0];
     parts[1] = 'gmail.com';
