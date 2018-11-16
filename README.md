@@ -4,6 +4,7 @@ validators
 [![Build Status](https://travis-ci.org/dart-league/validators.svg?branch=master)](https://travis-ci.org/dart-league/validators)
 
 String validation and sanitization for Dart.
+Dart 2-compatible version of [validator](https://pub.dartlang.org/packages/validator)
 
 Port of [chriso's library](https://github.com/chriso/validator.js).
 
@@ -12,7 +13,7 @@ Port of [chriso's library](https://github.com/chriso/validator.js).
 1\. Add dependency to your package's `pubspec.yaml` file:
 
     dependencies:
-      validator: ">=0.0.4 <0.1.0"
+      validators: ^1.0.0+1
 
 2\. Run from the command line:
 
@@ -22,7 +23,7 @@ Alternatively, your editor might support pub. Check the docs for your editor to 
 
 3\. Import in your Dart code:
 
-    import 'package:validator/validator.dart';
+    import 'package:validators/validators.dart';
 
 ## Validators
 
