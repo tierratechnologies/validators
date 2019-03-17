@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 import 'package:validators/validators.dart' as v;
 
 void check({List valid = const [], List invalid = const [], bool validator(value)}) {
-  valid.forEach((v) => expect(validator(v), true));
-  invalid.forEach((v) => expect(validator(v), false));
+  valid.forEach((v) => expect(validator(v), true, reason: '"$v" should be valid'));
+  invalid.forEach((v) => expect(validator(v), false, reason: '"$v" should be invalid'));
 }
 
 main() {
@@ -42,7 +42,9 @@ main() {
   });
 
   test('IsURL', () {
-    check(validator: (val) => v.isURL(val), valid: [
+    check(validator: (val) {
+      return v.isURL(val);
+    }, valid: [
       'foobar.com',
       'www.foobar.com',
       'foobar.com/',
@@ -57,6 +59,7 @@ main() {
       'http://user:pass@www.foobar.com/',
       'http://127.0.0.1/',
       'http://10.0.0.0/',
+      'http://10.0.0.0:3000/',
       'http://189.123.14.13/',
       'http://duckduckgo.com/?q=%2F',
       'http://foobar.com/t\$-_.+!*\'(),',
@@ -79,6 +82,7 @@ main() {
       'rtmp://foobar.com',
       'http://www.xn--.com/',
       'http://xn--.com/',
+      'http:// :pass@www.foobar.com/',
       'http://www.foobar.com:0/',
       'http://www.foobar.com:70000/',
       'http://www.foobar.com:99999/',
@@ -93,6 +97,9 @@ main() {
       '!.foo.com',
       'http://localhost:61500this is an invalid url!!!!'
     ]);
+
+    expect(v.isURL('www.example.com', requireProtocol: true), false);
+    expect(v.isURL('example', requireTld: false), true);
   });
 
   test('IsIP', () {
