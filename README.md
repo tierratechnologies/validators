@@ -27,6 +27,6 @@ Alternatively, your editor might support pub. Check the docs for your editor to 
 
 ## Documentation
 
-### [Validators](https://pub.dartlang.org/documentation/validators/latest/validators-library.html)
+### [Validators](https://pub.dartlang.org/documentation/validators/latest/validators/validators-library.html)
 
-### [Sanitizers](https://pub.dartlang.org/documentation/validators/latest/sanitizer-library.html)
+### [Sanitizers](https://pub.dartlang.org/documentation/validators/latest/sanitizers/sanitizers-library.html)
