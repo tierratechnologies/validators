@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:vin_decoder/vin_decoder.dart';
 import 'src/helpers.dart';
 
 RegExp _email = new RegExp(
@@ -480,4 +480,11 @@ bool isSurrogatePair(String str) {
 /// check if the string is a valid hex-encoded representation of a MongoDB ObjectId
 bool isMongoId(String str) {
   return (isHexadecimal(str) && str.length == 24);
+}
+
+/// check if the string is a valid ISO 3779-compliant Vehicle identification
+/// number (VIN)
+bool isVIN(String str) {
+  VIN vin = VIN(number: str);
+  return vin.valid();
 }
