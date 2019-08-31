@@ -474,4 +474,10 @@ main() {
         valid: ['507f1f77bcf86cd799439011'],
         invalid: ['507f1f77bcf86cd7994390', '507f1f77bcf86cd7994390z', '']);
   });
+  test('IsPostalCode', () {
+    check(
+        validator: (val) => v.isPostalCode(val, 'US'),
+        valid: ['00000'],
+        invalid: ['000000', 'aaaaaa', '']);
+  });
 }
