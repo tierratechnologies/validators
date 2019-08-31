@@ -5,8 +5,10 @@ import 'src/helpers.dart';
 RegExp _email = new RegExp(
     r"^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$");
 
-RegExp _ipv4Maybe = new RegExp(r'^(\d?\d?\d)\.(\d?\d?\d)\.(\d?\d?\d)\.(\d?\d?\d)$');
-RegExp _ipv6 = new RegExp(r'^::|^::1|^([a-fA-F0-9]{1,4}::?){1,7}([a-fA-F0-9]{1,4})$');
+RegExp _ipv4Maybe =
+    new RegExp(r'^(\d?\d?\d)\.(\d?\d?\d)\.(\d?\d?\d)\.(\d?\d?\d)$');
+RegExp _ipv6 =
+    new RegExp(r'^::|^::1|^([a-fA-F0-9]{1,4}::?){1,7}([a-fA-F0-9]{1,4})$');
 
 RegExp _surrogatePairsRegExp = new RegExp(r'[\uD800-\uDBFF][\uDC00-\uDFFF]');
 
@@ -14,11 +16,13 @@ RegExp _alpha = new RegExp(r'^[a-zA-Z]+$');
 RegExp _alphanumeric = new RegExp(r'^[a-zA-Z0-9]+$');
 RegExp _numeric = new RegExp(r'^-?[0-9]+$');
 RegExp _int = new RegExp(r'^(?:-?(?:0|[1-9][0-9]*))$');
-RegExp _float = new RegExp(r'^(?:-?(?:[0-9]+))?(?:\.[0-9]*)?(?:[eE][\+\-]?(?:[0-9]+))?$');
+RegExp _float =
+    new RegExp(r'^(?:-?(?:[0-9]+))?(?:\.[0-9]*)?(?:[eE][\+\-]?(?:[0-9]+))?$');
 RegExp _hexadecimal = new RegExp(r'^[0-9a-fA-F]+$');
 RegExp _hexcolor = new RegExp(r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$');
 
-RegExp _base64 = new RegExp(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{4})$');
+RegExp _base64 = new RegExp(
+    r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{4})$');
 
 RegExp _creditCard = new RegExp(
     r'^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$');
@@ -27,16 +31,22 @@ RegExp _isbn10Maybe = new RegExp(r'^(?:[0-9]{9}X|[0-9]{10})$');
 RegExp _isbn13Maybe = new RegExp(r'^(?:[0-9]{13})$');
 
 Map _uuid = {
-  '3': new RegExp(r'^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$'),
-  '4': new RegExp(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'),
-  '5': new RegExp(r'^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'),
-  'all': new RegExp(r'^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$')
+  '3': new RegExp(
+      r'^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$'),
+  '4': new RegExp(
+      r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'),
+  '5': new RegExp(
+      r'^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'),
+  'all': new RegExp(
+      r'^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$')
 };
 
 RegExp _multibyte = new RegExp(r'[^\x00-\x7F]');
 RegExp _ascii = new RegExp(r'^[\x00-\x7F]+$');
-RegExp _fullWidth = new RegExp(r'[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]');
-RegExp _halfWidth = new RegExp(r'[\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]');
+RegExp _fullWidth = new RegExp(
+    r'[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]');
+RegExp _halfWidth = new RegExp(
+    r'[\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]');
 
 /// check if the string matches the comparison
 bool equals(String str, comparison) {
@@ -69,16 +79,29 @@ bool isEmail(String str) {
 /// * [hostBlacklist] sets the list of disallowed hosts
 bool isURL(String str,
     {List<String> protocols = const ['http', 'https', 'ftp'],
-      bool requireTld = true,
-      bool requireProtocol = false,
-      bool allowUnderscore = false,
-      List<String> hostWhitelist = const [],
-      List<String> hostBlacklist = const []}) {
-  if (str == null || str.length == 0 || str.length > 2083 || str.startsWith('mailto:')) {
+    bool requireTld = true,
+    bool requireProtocol = false,
+    bool allowUnderscore = false,
+    List<String> hostWhitelist = const [],
+    List<String> hostBlacklist = const []}) {
+  if (str == null ||
+      str.length == 0 ||
+      str.length > 2083 ||
+      str.startsWith('mailto:')) {
     return false;
   }
 
-  var protocol, user, auth, host, hostname, port, port_str, path, query, hash, split;
+  var protocol,
+      user,
+      auth,
+      host,
+      hostname,
+      port,
+      port_str,
+      path,
+      query,
+      hash,
+      split;
 
   // check protocol
   split = str.split('://');
@@ -143,12 +166,17 @@ bool isURL(String str,
     } catch (e) {
       return false;
     }
-    if (!new RegExp(r'^[0-9]+$').hasMatch(port_str) || port <= 0 || port > 65535) {
+    if (!new RegExp(r'^[0-9]+$').hasMatch(port_str) ||
+        port <= 0 ||
+        port > 65535) {
       return false;
     }
   }
 
-  if (!isIP(host) && !isFQDN(host, requireTld: requireTld, allowUnderscores: allowUnderscore) && host != 'localhost') {
+  if (!isIP(host) &&
+      !isFQDN(host,
+          requireTld: requireTld, allowUnderscores: allowUnderscore) &&
+      host != 'localhost') {
     return false;
   }
 
@@ -185,7 +213,8 @@ bool isIP(String str, [/*<String | int>*/ version]) {
 ///
 /// * [requireTld] sets if TLD is required
 /// * [allowUnderscore] sets if underscores are allowed
-bool isFQDN(String str, {bool requireTld = true, bool allowUnderscores = false}) {
+bool isFQDN(String str,
+    {bool requireTld = true, bool allowUnderscores = false}) {
   var parts = str.split('.');
   if (requireTld) {
     var tld = parts.removeLast();
@@ -203,7 +232,9 @@ bool isFQDN(String str, {bool requireTld = true, bool allowUnderscores = false})
     if (!new RegExp(r'^[a-z\\u00a1-\\uffff0-9-]+$').hasMatch(part)) {
       return false;
     }
-    if (part[0] == '-' || part[part.length - 1] == '-' || part.indexOf('---') >= 0) {
+    if (part[0] == '-' ||
+        part[part.length - 1] == '-' ||
+        part.indexOf('---') >= 0) {
       return false;
     }
   }
@@ -482,12 +513,12 @@ bool isMongoId(String str) {
   return (isHexadecimal(str) && str.length == 24);
 }
 
-
 /// check if the string is a valid ISO 3779-compliant Vehicle identification
 /// number (VIN)
 bool isVIN(String str) {
   VIN vin = VIN(number: str);
   return vin.valid();
+}
 
 var _threeDigit = RegExp(r'^\d{3}$');
 var _fourDigit = RegExp(r'^\d{4}$');
@@ -499,7 +530,9 @@ var _postalCodePatterns = {
   "AU": _fourDigit,
   "BE": _fourDigit,
   "BG": _fourDigit,
-  "CA": RegExp(r'^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][\s\-]?\d[ABCEGHJ-NPRSTV-Z]\d$', caseSensitive: false),
+  "CA": RegExp(
+      r'^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][\s\-]?\d[ABCEGHJ-NPRSTV-Z]\d$',
+      caseSensitive: false),
   "CH": _fourDigit,
   "CZ": RegExp(r'^\d{3}\s?\d{2}$'),
   "DE": _fiveDigit,
@@ -509,7 +542,8 @@ var _postalCodePatterns = {
   "ES": _fiveDigit,
   "FI": _fiveDigit,
   "FR": RegExp(r'^\d{2}\s?\d{3}$'),
-  "GB": RegExp(r'^(gir\s?0aa|[a-z]{1,2}\d[\da-z]?\s?(\d[a-z]{2})?)$', caseSensitive: false),
+  "GB": RegExp(r'^(gir\s?0aa|[a-z]{1,2}\d[\da-z]?\s?(\d[a-z]{2})?)$',
+      caseSensitive: false),
   "GR": RegExp(r'^\d{3}\s?\d{2}$'),
   "HR": RegExp(r'^([1-5]\d{4}$)'),
   "HU": _fourDigit,
@@ -545,6 +579,7 @@ var _postalCodePatterns = {
 
 bool isPostalCode(String text, String locale, {bool orElse()}) {
   final pattern = _postalCodePatterns[locale];
-  return pattern != null ? pattern.hasMatch(text) :
-          orElse != null ? orElse() : throw FormatException();
+  return pattern != null
+      ? pattern.hasMatch(text)
+      : orElse != null ? orElse() : throw FormatException();
 }
