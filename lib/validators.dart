@@ -180,11 +180,11 @@ bool isURL(String str,
     return false;
   }
 
-  if (hostWhitelist.isNotEmpty && hostWhitelist.contains(host)) {
+  if (hostWhitelist.isNotEmpty && !hostWhitelist.contains(host)) {
     return false;
   }
 
-  if (hostBlacklist.isNotEmpty && !hostBlacklist.contains(host)) {
+  if (hostBlacklist.isNotEmpty && hostBlacklist.contains(host)) {
     return false;
   }
 
