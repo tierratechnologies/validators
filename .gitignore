@@ -15,3 +15,10 @@ pubspec.lock
 /.packages
 /.dart_tool/
 /doc/
+/.idea/.gitignore
+/.idea/libraries/Dart_Packages.xml
+/.idea/libraries/Dart_SDK.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/validators.iml
+/.idea/vcs.xml
