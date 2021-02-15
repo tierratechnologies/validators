@@ -16,6 +16,7 @@ dependencies:
   vin_decoder:
     git:
       url: git@github.com:tierratechnologies/vin-decoder-dart.git
+      ref: null-safety
 
 dev_dependencies:
   test: ^1.16.2
