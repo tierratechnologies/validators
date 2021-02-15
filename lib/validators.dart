@@ -77,7 +77,7 @@ bool isEmail(String str) {
 /// * [allowUnderscore] sets if underscores are allowed
 /// * [hostWhitelist] sets the list of allowed hosts
 /// * [hostBlacklist] sets the list of disallowed hosts
-bool isURL(String str,
+bool isURL(String? str,
     {List<String> protocols = const ['http', 'https', 'ftp'],
     bool requireTld = true,
     bool requireProtocol = false,
@@ -116,7 +116,7 @@ bool isURL(String str,
   str = split.join('://');
 
   // check hash
-  split = str.split('#');
+  split = str!.split('#');
   str = shift(split);
   hash = split.join('#');
   if (hash != null && hash != "" && new RegExp(r'\s').hasMatch(hash)) {
@@ -124,7 +124,7 @@ bool isURL(String str,
   }
 
   // check query params
-  split = str.split('?');
+  split = str!.split('?');
   str = shift(split);
   query = split.join('?');
   if (query != null && query != "" && new RegExp(r'\s').hasMatch(query)) {
@@ -132,7 +132,7 @@ bool isURL(String str,
   }
 
   // check path
-  split = str.split('/');
+  split = str!.split('/');
   str = shift(split);
   path = split.join('/');
   if (path != null && path != "" && new RegExp(r'\s').hasMatch(path)) {
@@ -140,7 +140,7 @@ bool isURL(String str,
   }
 
   // check auth type urls
-  split = str.split('@');
+  split = str!.split('@');
   if (split.length > 1) {
     auth = shift(split);
     if (auth.indexOf(':') >= 0) {
@@ -303,19 +303,19 @@ bool isDivisibleBy(String str, n) {
 }
 
 /// check if the string [str] is null
-bool isNull(String str) {
+bool isNull(String? str) {
   return str == null || str.length == 0;
 }
 
 /// check if the length of the string [str] falls in a range
-bool isLength(String str, int min, [int max]) {
+bool isLength(String str, int min, [int? max]) {
   List surrogatePairs = _surrogatePairsRegExp.allMatches(str).toList();
   int len = str.length - surrogatePairs.length;
   return len >= min && (max == null || len <= max);
 }
 
 /// check if the string's length (in bytes) falls in a range.
-bool isByteLength(String str, int min, [int max]) {
+bool isByteLength(String str, int min, [int? max]) {
   return str.length >= min && (max == null || str.length <= max);
 }
 
@@ -327,7 +327,7 @@ bool isUUID(String str, [version]) {
     version = version.toString();
   }
 
-  RegExp pat = _uuid[version];
+  RegExp? pat = _uuid[version];
   return (pat != null && pat.hasMatch(str.toUpperCase()));
 }
 
@@ -577,7 +577,7 @@ var _postalCodePatterns = {
   "ZM": _fiveDigit
 };
 
-bool isPostalCode(String text, String locale, {bool orElse()}) {
+bool isPostalCode(String text, String locale, { Function? orElse}) {
   final pattern = _postalCodePatterns[locale];
   return pattern != null
       ? pattern.hasMatch(text)

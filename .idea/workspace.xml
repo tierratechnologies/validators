@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d837dddb-49ae-44a5-a26b-57ed9029b1c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sanitizers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sanitizers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/validators.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validators.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/validator_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/validator_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kz0ktA5PSrUdEkQpm0UvHtwaxo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="tests in validator_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="VMOptions" value="--no-sound-null-safety" />
+      <option name="filePath" value="$PROJECT_DIR$/test/validator_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="FlutterTestConfigType" factoryName="Flutter Test">
+      <option name="testDir" value="$PROJECT_DIR$/test" />
+      <option name="additionalArgs" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Test.tests in validator_test.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d837dddb-49ae-44a5-a26b-57ed9029b1c5" name="Default Changelist" comment="" />
+      <created>1606688258869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606688258869</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="744" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613430043418">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state x="744" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.2560.1321@0.25.2560.1321" timestamp="1613430043418" />
+    <state x="1017" y="483" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1613429948388">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state x="1017" y="483" key="#com.intellij.ide.util.TreeFileChooserDialog/0.25.2560.1321@0.25.2560.1321" timestamp="1613429948388" />
+    <state width="2518" height="373" key="GridCell.Tab.0.bottom" timestamp="1613430027882">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state width="2518" height="373" key="GridCell.Tab.0.bottom/0.25.2560.1321@0.25.2560.1321" timestamp="1613430027882" />
+    <state width="2518" height="373" key="GridCell.Tab.0.center" timestamp="1613430027881">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state width="2518" height="373" key="GridCell.Tab.0.center/0.25.2560.1321@0.25.2560.1321" timestamp="1613430027881" />
+    <state width="2518" height="373" key="GridCell.Tab.0.left" timestamp="1613430027881">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state width="2518" height="373" key="GridCell.Tab.0.left/0.25.2560.1321@0.25.2560.1321" timestamp="1613430027881" />
+    <state width="2518" height="373" key="GridCell.Tab.0.right" timestamp="1613430027881">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state width="2518" height="373" key="GridCell.Tab.0.right/0.25.2560.1321@0.25.2560.1321" timestamp="1613430027881" />
+    <state x="781" y="325" key="SettingsEditor" timestamp="1613429236117">
+      <screen x="0" y="25" width="2560" height="1321" />
+    </state>
+    <state x="781" y="325" key="SettingsEditor/0.25.2560.1321@0.25.2560.1321" timestamp="1613429236117" />
+  </component>
+</project>

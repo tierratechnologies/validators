@@ -3,7 +3,7 @@ library validator_test;
 import 'package:test/test.dart';
 import 'package:validators/validators.dart' as v;
 
-void check({List valid = const [], List invalid = const [], bool validator(value)}) {
+void check({List valid = const [], List invalid = const [], required bool validator(value)}) {
   valid.forEach((v) => expect(validator(v), true, reason: '"$v" should be valid'));
   invalid.forEach((v) => expect(validator(v), false, reason: '"$v" should be invalid'));
 }
@@ -91,7 +91,7 @@ main() {
       'http://www.foo---bar.com/',
       'http://www.foo_bar.com/',
       '',
-      'http://foobar.com/' + new List(2083).join('f'),
+      'http://foobar.com/' + new List.filled(2083, null, growable: false).join('f'),
       'http://*.foo.com',
       '*.foo.com',
       '!.foo.com',
